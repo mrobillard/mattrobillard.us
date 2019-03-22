@@ -1,0 +1,26 @@
+{
+  "name": "mattrobillard.us",
+  "version": "0.0.1",
+  "description": "mattrobillard.us (blog)",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrobillard/mattrobillard.us.git"
+  },
+  "author": "Matthew Robillard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrobillard/mattrobillard.us/issues"
+  },
+  "homepage": "https://github.com/mrobillard/mattrobillard.us#readme",
+  "dependencies": {
+    "next": "^8.0.3",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  }
+}
