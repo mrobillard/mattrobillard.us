@@ -38,6 +38,9 @@ const Post = ({ id, date, title }) => (
         text-align: right;
         margin-right: 30px;
         color: #999;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: 'AvenirNext-DemiBold';
       }
       a {
         text-decoration: none;

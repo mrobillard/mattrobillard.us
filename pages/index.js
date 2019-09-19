@@ -1,20 +1,17 @@
-import Page from '../layouts/main'
+import Page from '../layouts/landing'
 import Link from 'next/link'
 import Head from 'next/head'
 
 export default () => (
   <Page>
-    <Head>
-      <title>mattrobillard.us</title>
-    </Head>
-
     <div className="home">
       <div className="main">
-        <h1>Matt Robillard</h1>
+        <h1>MATT ROBILLARD</h1>
         <nav>
           <a target="_blank" href="https://twitter.com/mattrobillard">Twitter</a>
           <Link href="/essays"><a>Essays</a></Link>
-          <Link href="/other"><a>Other</a></Link>
+          <Link href="/technical"><a>Technical</a></Link>
+          <Link href="/explorations"><a>Explorations</a></Link>
           <a href="mailto:matt@mattrobillard.us">Email</a>
         </nav>
       </div>
@@ -36,8 +33,10 @@ export default () => (
         text-align: center;
       }
       h1 {
-        font-size: 16px;
-        font-weight: normal;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'AvenirNext-DemiBold';
+        letter-spacing: 4px;
       }
       nav {
         margin-top: 20px;

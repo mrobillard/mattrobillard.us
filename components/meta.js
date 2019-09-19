@@ -13,15 +13,15 @@ export default () => (
         box-sizing: border-box;
       }
       body {
-        font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font: 13px Roboto;
       }
       a {
-        color: #2196f3;
+        color: #767676;
+        font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
       }
       a:hover {
-        color: #fff;
-        background: #2196f3;
+        color: #000;
         text-decoration: none;
       }
     `}</style>
