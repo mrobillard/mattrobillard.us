@@ -1,10 +1,12 @@
-import Page from '../layouts/landing'
-import Link from 'next/link'
-import Head from 'next/head'
+import Page from '../layouts/landing';
+import Link from 'next/link';
+import Head from 'next/head';
+
+import Header from '../components/header';
 
 export default () => (
   <Page>
-    <div className="home">
+    {/* <div className="home">
       <div className="main">
         <h1>MATT ROBILLARD</h1>
         <nav>
@@ -15,7 +17,8 @@ export default () => (
           <a href="mailto:matt@mattrobillard.us">Email</a>
         </nav>
       </div>
-    </div>
+    </div> */}
+    <Header />
 
     <style jsx>{`
       .home {
@@ -48,4 +51,4 @@ export default () => (
       }
     `}</style>
   </Page>
-)
+);
