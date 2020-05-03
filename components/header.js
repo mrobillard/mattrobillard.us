@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export const WRITINGS = 'WRITINGS';
+export const TECHNICAL = 'TECHNICAL';
 export const ABOUT = 'ABOUT';
 export const TWITTER = 'TWITTER';
 export const SOURCE = 'SOURCE';
@@ -8,7 +9,9 @@ export const SOURCE = 'SOURCE';
 export default ({ active = null }) => (
   <header>
     <Link href='/'>
-      <a href='/'>MR</a>
+      <a id='logo' href='/'>
+        Matt Robillard
+      </a>
     </Link>
 
     <nav>
@@ -44,6 +47,14 @@ export default ({ active = null }) => (
         transition: 150ms background-color ease;
         padding: 5px;
       }
+
+      #logo {
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
       ul li a {
         padding: 5px 10px;
       }
@@ -53,7 +64,7 @@ export default ({ active = null }) => (
       }
       @media (min-width: 500px) {
         a:hover {
-          background-color: var(--link-highlight);
+          color: gray;
         }
         header {
           display: flex;
