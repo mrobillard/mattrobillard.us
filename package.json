@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/mrobillard/mattrobillard.us#readme",
   "dependencies": {
-    "next": "^8.0.3",
+    "next": "^9.3.6",
+    "nprogress": "^0.2.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   }
