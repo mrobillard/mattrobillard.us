@@ -12,7 +12,7 @@ export default ({ tweets, children }) => (
         font-size: 18px;
       }
       @media (min-width: 500px) {
-        max-width: 42rem;
+        max-width: 50rem;
         margin: auto;
       }
     `}</style>

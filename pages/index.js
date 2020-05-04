@@ -1,54 +1,79 @@
-import Page from '../layouts/landing';
 import Link from 'next/link';
-import Head from 'next/head';
 
-import Header from '../components/header';
+import Layout from '../components/layouts/main';
+import { posts } from '../posts';
+import { WRITINGS } from '../components/header';
 
-export default () => (
-  <Page>
-    {/* <div className="home">
-      <div className="main">
-        <h1>MATT ROBILLARD</h1>
-        <nav>
-          <a target="_blank" href="https://twitter.com/mattrobillard">Twitter</a>
-          <Link href="/essays"><a>Essays</a></Link>
-          <Link href="/technical"><a>Technical</a></Link>
-          <Link href="/explorations"><a>Explorations</a></Link>
-          <a href="mailto:matt@mattrobillard.us">Email</a>
-        </nav>
-      </div>
-    </div> */}
-    <Header />
+export function getStaticProps() {
+  return {
+    props: {
+      posts: posts.map((post) => ({
+        ...post,
+        url: `${new Date(post.date).getFullYear()}/${post.id}`,
+      })),
+    },
+  };
+}
+
+const Home = ({ posts, date }) => (
+  <Layout headerActive={WRITINGS}>
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <span>{post.date}</span>
+          <Link href={post.url}>
+            <a>{post.title}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
 
     <style jsx>{`
-      .home {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      ul li {
+        padding: 10px 15px;
       }
-      .main {
-        flex: none;
-        text-align: center;
-      }
-      h1 {
-        font-size: 20px;
-        font-weight: bold;
-        font-family: 'AvenirNext-DemiBold';
-        letter-spacing: 4px;
-      }
-      nav {
-        margin-top: 20px;
-      }
-      a {
+      ul li span {
+        color: #5b5b5b;
         display: inline-block;
-        margin: 0 16px;
+        font-size: 13px;
+        border: 1.3px gray solid;
+        border-radius: 5px;
+        width: fit-content;
+        margin-right: 10px;
+      }
+      ul li a {
+        font-weight: bold;
+        color: var(--link-color);
         text-decoration: none;
       }
+      @media (min-width: 500px) {
+        ul {
+          padding: 20px 0;
+          max-width: 50rem;
+          margin: auto;
+        }
+        ul li {
+          padding-left: 0;
+        }
+        ul li a {
+          padding: 5px 10px;
+          transition: 300ms background-color ease-in;
+        }
+        ul li a:hover {
+          background-color: #f6f6f6;
+          border-radius: 5px;
+        }
+        ul li span {
+          display: inline-block;
+          width: 160px;
+          padding: 0 10px;
+          text-align: right;
+          font-size: inherit;
+          width: fit-content;
+        }
+      }
     `}</style>
-  </Page>
+  </Layout>
 );
+
+export default Home;

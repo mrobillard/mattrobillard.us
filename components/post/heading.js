@@ -1,4 +1,4 @@
-const Heading = ({ id, level = 2, fontSize = 20, children }) => (
+const H = ({ id, level = 2, fontSize = 20, children }) => (
   <div>
     {React.createElement(
       `h${level}`,

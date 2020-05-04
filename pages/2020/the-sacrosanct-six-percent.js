@@ -5,8 +5,9 @@ import Post from '../../components/layouts/post';
 import { H2, H3 } from '../../components/post/heading';
 import P from '../../components/post/paragraph';
 import { Ref, FootNotes, Note } from '../../components/post/footnotes';
+import Header from '../../components/post/header';
 
-export default withViews(({ views }) => (
+export default ({ views }) => (
   <Post>
     <Header
       title='The Sacrosanct Six Percent'
@@ -43,4 +44,4 @@ export default withViews(({ views }) => (
       <Note id='1'></Note>
     </FootNotes>
   </Post>
-));
+);
