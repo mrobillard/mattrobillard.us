@@ -21,6 +21,11 @@ export default ({ active = null }) => (
             <a href='/'>Writings</a>
           </Link>
         </li>
+        <li className={active === TECHNICAL ? 'active' : ''}>
+          <Link href='/'>
+            <a href='/'>Technical</a>
+          </Link>
+        </li>
         <li className={active === ABOUT ? 'active' : ''}>
           <a href='mailto:robillard.matt@gmail.com'>Email</a>
         </li>
@@ -47,24 +52,31 @@ export default ({ active = null }) => (
         transition: 150ms background-color ease;
         padding: 5px;
       }
-
       #logo {
         font-family: 'Avenir Next';
         font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
       }
-
+      #logo:hover {
+        background-color: white;
+      }
       ul li a {
-        padding: 5px 10px;
+        padding: 2px 10px;
       }
       .active a {
         font-weight: bold;
         pointer-events: none;
       }
       @media (min-width: 500px) {
+        header {
+          max-width: 50rem;
+          margin: auto;
+          padding: 20px 0;
+        }
         a:hover {
-          color: gray;
+          background-color: #f6f6f6;
+          border-radius: 5px;
         }
         header {
           display: flex;
