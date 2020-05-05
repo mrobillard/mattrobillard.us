@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const WRITINGS = 'WRITINGS';
+export const ESSAYS = 'ESSAYS';
 export const TECHNICAL = 'TECHNICAL';
 export const ABOUT = 'ABOUT';
 export const TWITTER = 'TWITTER';
@@ -16,14 +16,14 @@ export default ({ active = null }) => (
 
     <nav>
       <ul>
-        <li className={active === WRITINGS ? 'active' : ''}>
+        <li className={active === ESSAYS ? 'active' : ''}>
           <Link href='/'>
-            <a href='/'>Writings</a>
+            <a href='/'>Essays</a>
           </Link>
         </li>
         <li className={active === TECHNICAL ? 'active' : ''}>
-          <Link href='/'>
-            <a href='/'>Technical</a>
+          <Link href='/technical'>
+            <a href='/technical'>Technical</a>
           </Link>
         </li>
         <li className={active === ABOUT ? 'active' : ''}>
@@ -51,6 +51,7 @@ export default ({ active = null }) => (
         display: inline-flex;
         transition: 150ms background-color ease;
         padding: 5px;
+        margin: 0 1.5px;
       }
       #logo {
         font-family: 'Avenir Next';
@@ -67,6 +68,8 @@ export default ({ active = null }) => (
       .active a {
         font-weight: bold;
         pointer-events: none;
+        background-color: #e6e6e4;
+        border-radius: 5px;
       }
       @media (min-width: 500px) {
         header {

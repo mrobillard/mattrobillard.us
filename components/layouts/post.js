@@ -8,7 +8,8 @@ export default ({ tweets, children }) => (
 
     <style jsx>{`
       main {
-        padding: 15px;
+        padding-top: 15px;
+        padding-left: 6px;
         font-size: 18px;
       }
       @media (min-width: 500px) {

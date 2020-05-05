@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Layout from '../components/layouts/main';
 import { posts } from '../posts';
-import { WRITINGS } from '../components/header';
+import { ESSAYS } from '../components/header';
 
 export function getStaticProps() {
   return {
@@ -16,7 +16,7 @@ export function getStaticProps() {
 }
 
 const Home = ({ posts, date }) => (
-  <Layout headerActive={WRITINGS}>
+  <Layout headerActive={ESSAYS}>
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
@@ -31,6 +31,7 @@ const Home = ({ posts, date }) => (
     <style jsx>{`
       ul li {
         padding: 10px 15px;
+        margin-left: 8px;
       }
       ul li span {
         color: #5b5b5b;

@@ -1,20 +1,79 @@
-import Page from '../layouts/main'
-import Link from 'next/link'
-import Head from 'next/head'
+import Link from 'next/link';
 
-export default () => (
-  <Page>
-    <Head>
-      <title>Technical</title>
-    </Head>
+import Layout from '../components/layouts/main';
+import { posts } from '../technical-posts';
+import { TECHNICAL } from '../components/header';
+
+export function getStaticProps() {
+  return {
+    props: {
+      posts: posts.map((post) => ({
+        ...post,
+        url: `${new Date(post.date).getFullYear()}/${post.id}`,
+      })),
+    },
+  };
+}
+
+const Technical = ({ posts, date }) => (
+  <Layout headerActive={TECHNICAL}>
     <ul>
-      <li><Link href="/tech/ctypes-conversions"><a>Ctypes Conversions</a></Link></li>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <span>{post.date}</span>
+          <Link href={post.url}>
+            <a>{post.title}</a>
+          </Link>
+        </li>
+      ))}
     </ul>
 
     <style jsx>{`
-      places {
-        margin-bottom: 10px;
+      ul li {
+        padding: 10px 15px;
+      }
+      ul li span {
+        color: #5b5b5b;
+        display: inline-block;
+        font-size: 13px;
+        border: 1.3px gray solid;
+        border-radius: 5px;
+        width: fit-content;
+        margin-right: 10px;
+      }
+      ul li a {
+        font-weight: bold;
+        color: var(--link-color);
+        text-decoration: none;
+      }
+      @media (min-width: 500px) {
+        ul {
+          padding: 20px 0;
+          max-width: 50rem;
+          margin: auto;
+        }
+        ul li {
+          padding-left: 0;
+        }
+        ul li a {
+          padding: 5px 10px;
+          transition: 300ms background-color ease-in;
+        }
+        ul li a:hover {
+          background-color: #f6f6f6;
+          border-radius: 5px;
+        }
+        ul li span {
+          display: inline-block;
+          width: 160px;
+          padding: 0 10px;
+          text-align: right;
+          font-size: inherit;
+          width: fit-content;
+        }
       }
     `}</style>
-  </Page>
-)
+  </Layout>
+);
+
+export default Technical;

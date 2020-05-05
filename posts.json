@@ -2,18 +2,13 @@
   "posts": [
     {
       "id": "the-sacrosanct-six-percent",
-      "date": "May 7, 2020",
+      "date": "May 1, 2020",
       "title": "The Sacrosanct Six Percent"
     },
     {
       "id": "mortgage-alternatives",
-      "date": "November 29, 2018",
+      "date": "November 29, 2019",
       "title": "Mortgage Alternatives"
-    },
-    {
-      "id": "twenty-five",
-      "date": "May 22, 2018",
-      "title": "25 Things I Learned By 25"
     }
   ]
 }

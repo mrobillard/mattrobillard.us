@@ -11,7 +11,7 @@ export default ({ views }) => (
   <Post>
     <Header
       title='The Sacrosanct Six Percent'
-      date='May 7, 2020'
+      date='May 1, 2020'
       views={views}
     />
     <Head>
@@ -26,22 +26,29 @@ export default ({ views }) => (
     </Head>
 
     <P>
-      <em>
-        "All professions are conspiracies against the laity." -George Bernard
-        Shaw
+      <br />
+      <em style={{ fontFamily: 'Playfair', fontWeight: 500, fontSize: '20px' }}>
+        "All professions are conspiracies against the laity." &mdash;George
+        Bernard Shaw
       </em>
     </P>
-    <H2>
-      <P>
-        The United States has a romance with homeownership that traces its roots
-        back to the 1800's and the formation of the country. In a sprawling and
-        disparate land, ownership of homes and property helped unite people,
-        quite literally giving them a stake in a new country full of immigrants.
-        It was a sense of belonging that would otherwise be hard to cultivate.
-      </P>
-    </H2>
+    <H2>The Very Beginning</H2>
+    <P>
+      The United States has a romance with homeownership that traces its roots
+      back to the 1800's and the formation of the country. In a sprawling and
+      disparate land, ownership of homes and property helped unite people, quite
+      literally giving them a stake in a new country full of immigrants. It was
+      a sense of belonging that would otherwise be hard to cultivate
+      <Ref id='1' />.
+    </P>
     <FootNotes>
-      <Note id='1'></Note>
+      <Note id='1'>
+        This is an example of a reference with a{' '}
+        <a target='_blank' href='https://google.com'>
+          link
+        </a>{' '}
+        in the note.
+      </Note>
     </FootNotes>
   </Post>
 );
