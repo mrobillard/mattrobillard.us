@@ -5,6 +5,7 @@ export default ({ children }) => (
       p {
         line-height: 1.5;
         margin: 20px 0;
+        font-size: 16px;
       }
     `}</style>
   </p>
