@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import Layout from '../components/layouts/main';
 import { posts } from '../technical-posts';
@@ -17,6 +18,9 @@ export function getStaticProps() {
 
 const Technical = ({ posts, date }) => (
   <Layout headerActive={TECHNICAL}>
+    <Head>
+      <title>mattrobillard.us</title>
+    </Head>
     <ul>
       {posts.map((post) => (
         <li key={post.id}>

@@ -10,7 +10,11 @@ class DocumentOverride extends Document {
     return (
       <Html>
         <Head>
-          <link rel='shortcut icon' href='public/favicon.ico' />
+          <link
+            rel='shortcut icon'
+            type='image/x-icon'
+            href='/myfavicon.ico?v=2'
+          />
         </Head>
         <body>
           <Main />

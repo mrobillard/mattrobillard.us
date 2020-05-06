@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import Layout from '../components/layouts/main';
 import { posts } from '../posts';
@@ -17,6 +18,9 @@ export function getStaticProps() {
 
 const Home = ({ posts, date }) => (
   <Layout headerActive={ESSAYS}>
+    <Head>
+      <title>mattrobillard.us</title>
+    </Head>
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
@@ -55,7 +59,7 @@ const Home = ({ posts, date }) => (
         }
         ul li {
           padding-left: 0;
-          margin-left: 8px;
+          margin-left: 3px;
         }
         ul li a {
           padding: 5px 10px;
