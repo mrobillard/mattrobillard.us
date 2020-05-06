@@ -2,9 +2,8 @@ import Link from 'next/link';
 
 export const ESSAYS = 'ESSAYS';
 export const TECHNICAL = 'TECHNICAL';
-export const ABOUT = 'ABOUT';
+export const EMAIL = 'EMAIL';
 export const TWITTER = 'TWITTER';
-export const SOURCE = 'SOURCE';
 
 export default ({ active = null }) => (
   <header>
@@ -16,7 +15,7 @@ export default ({ active = null }) => (
 
     <nav>
       <ul>
-        <li className={active === ESSAYS ? 'active' : ''}>
+        <li className={active === ESSAYS ? 'active' : 'remove-padding'}>
           <Link href='/'>
             <a href='/'>Essays</a>
           </Link>
@@ -26,7 +25,7 @@ export default ({ active = null }) => (
             <a href='/technical'>Technical</a>
           </Link>
         </li>
-        <li className={active === ABOUT ? 'active' : ''}>
+        <li className={active === EMAIL ? 'active' : ''}>
           <a href='mailto:robillard.matt@gmail.com'>Email</a>
         </li>
         <li className={active === TWITTER ? 'active' : ''}>
@@ -39,44 +38,60 @@ export default ({ active = null }) => (
 
     <style jsx>{`
       nav {
-        padding: 10px 0 10px 5px;
+        padding: 10px 0 10px 0px;
       }
+
       ul {
         display: flex;
         list-style-type: none;
       }
+
       a {
         text-decoration: none;
         color: #000;
         display: inline-flex;
         transition: 150ms background-color ease;
-        padding: 5px;
-        margin: 0 1.5px;
       }
+
       #logo {
         font-family: 'Avenir Next';
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 3px;
       }
+
       #logo:hover {
         background-color: white;
       }
+
       ul li a {
         padding: 2px 10px;
       }
+
       .active a {
         font-weight: bold;
         pointer-events: none;
         background-color: #e6e6e4;
         border-radius: 5px;
+        padding: 5px;
       }
+
+      @media (max-width: 499px) {
+        .remove-padding a {
+          padding-left: 0px !important;
+        }
+      }
+
       @media (min-width: 500px) {
         header {
           max-width: 50rem;
           margin: auto;
           padding: 20px 0;
         }
+        a {
+          margin: 0 1.5px;
+        }
+
         a:hover {
           background-color: #f6f6f6;
           border-radius: 5px;

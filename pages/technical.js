@@ -30,7 +30,7 @@ const Technical = ({ posts, date }) => (
 
     <style jsx>{`
       ul li {
-        padding: 10px 15px;
+        padding: 10px 0px;
       }
       ul li span {
         color: #5b5b5b;
@@ -40,6 +40,7 @@ const Technical = ({ posts, date }) => (
         border-radius: 5px;
         width: fit-content;
         margin-right: 10px;
+        padding: 0 7px;
       }
       ul li a {
         font-weight: bold;
@@ -54,6 +55,7 @@ const Technical = ({ posts, date }) => (
         }
         ul li {
           padding-left: 0;
+          margin-left: 8px;
         }
         ul li a {
           padding: 5px 10px;
@@ -66,10 +68,10 @@ const Technical = ({ posts, date }) => (
         ul li span {
           display: inline-block;
           width: 160px;
-          padding: 0 10px;
           text-align: right;
           font-size: inherit;
           width: fit-content;
+          padding: 0 10px;
         }
       }
     `}</style>
