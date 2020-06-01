@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 
 import Layout from '../components/layouts/main';
+import Tag from '../components/tag';
 import { posts } from '../posts';
 import { ESSAYS } from '../components/header';
 
@@ -24,7 +25,8 @@ const Home = ({ posts, date }) => (
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
-          <span>{post.date}</span>
+          <Tag date='true'>{post.date}</Tag>
+          <Tag color='blue'>Real Estate</Tag>
           <Link href={post.url}>
             <a>{post.title}</a>
           </Link>
@@ -35,7 +37,12 @@ const Home = ({ posts, date }) => (
     <style jsx>{`
       ul li {
         padding: 10px 0px;
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        flex-wrap: wrap;
       }
+
       ul li span {
         color: #5b5b5b;
         display: inline-block;
@@ -46,11 +53,17 @@ const Home = ({ posts, date }) => (
         margin-right: 10px;
         padding: 0 7px;
       }
+
       ul li a {
         font-weight: bold;
         color: var(--link-color);
         text-decoration: none;
+        display: block;
+        white-space: nowrap;
+        padding: 2px 0px;
+        margin-top: 2px;
       }
+
       @media (min-width: 500px) {
         ul {
           padding: 20px 0;
@@ -58,11 +71,12 @@ const Home = ({ posts, date }) => (
           margin: auto;
         }
         ul li {
+          display: flex;
           padding-left: 0;
           margin-left: 3px;
         }
         ul li a {
-          padding: 5px 10px;
+          padding: 2px 10px;
           transition: 300ms background-color ease-in;
         }
         ul li a:hover {
